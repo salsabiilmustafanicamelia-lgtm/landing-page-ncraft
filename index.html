@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Temukan aksesori crochet buatan tangan dan pesan rajutan khusus dari NCraft. Setiap karya dibuat dengan teliti, satu per satu.">
+    <meta name="theme-color" content="#f4f5f6">
+    <title>NCraft | Rajutan buatan tangan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link href="./node_module/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./scss/custom.css" rel="stylesheet">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="navbar navbar-expand-lg page-shell" aria-label="Navigasi utama">
+        <a class="navbar-brand brand-mark" href="#home" aria-label="Beranda NCraft">
+          <img class="brand-logo" src="./assets/logo.png" alt="NCraft">
+        </a>
+        <button class="navbar-toggler menu-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#siteMenu" aria-controls="siteMenu" aria-expanded="false" aria-label="Buka atau tutup navigasi">
+          <span class="menu-toggle-label">Menu</span>
+          <span class="menu-toggle-lines" aria-hidden="true"><span></span><span></span></span>
+        </button>
+        <div class="collapse navbar-collapse" id="siteMenu">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item"><a class="nav-link" href="#shop">Produk</a></li>
+            <li class="nav-item"><a class="nav-link" href="#cart-summary">Keranjang <span class="cart-count" id="cart-count">0</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="#about">Tentang kami</a></li>
+            <li class="nav-item"><a class="nav-link" href="#custom-orders">Custom order</a></li>
+            <li class="nav-item"><a class="nav-contact" href="#shop">Buat pesanan <span aria-hidden="true">↗</span></a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main id="home">
+      <section class="hero page-shell" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-rule"></span> RAJUTAN BUATAN TANGAN · DIBUAT DENGAN HATI</p>
+          <h1 id="hero-title">Souvenir rajutan,<br><em>untuk semua orang.</em></h1>
+          <p class="hero-intro">Aksesori crochet penuh warna untuk menemani hari. Dibuat perlahan, dirapikan satu per satu, dan siap menjadi hadiah istimewa atau teman keseharian.</p>
+          <a class="text-link" href="#shop">Lihat koleksi <span aria-hidden="true">↘</span></a>
+          <div class="hero-note"><span class="note-mark" aria-hidden="true">✳</span><span>Setiap rajutan dibuat satu per satu dengan teliti.</span></div>
+        </div>
+        <figure class="hero-image-wrap">
+          <img class="hero-image" src="./assets/crochet%20bg.jpg" alt="Koleksi rajutan buatan tangan NCraft" fetchpriority="high">
+          <figcaption class="image-caption"><span>RAJUTAN BUATAN TANGAN</span><span>KOLEKSI NCRAFT</span></figcaption>
+        </figure>
+      </section>
+
+      <section class="intro-band" id="about" aria-labelledby="approach-title">
+        <div class="page-shell intro-inner">
+          <p class="eyebrow">DIRAJUT PERLAHAN, DIBUAT SEPERSONAL MUNGKIN.</p>
+          <h2 id="approach-title">Rajutan untuk <span>membawa senyum.</span></h2>
+          <div class="intro-detail">
+            <p>Di NCraft, setiap detail dibuat dengan teliti: aksesori rajut penuh warna dan pesanan khusus yang terasa benar-benar milikmu.</p>
+            <a class="text-link text-link-light" href="#custom-orders">Buat custom order <span aria-hidden="true">↘</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="product-showcase page-shell" id="shop" aria-labelledby="shop-title">
+        <div class="product-showcase-heading">
+          <p class="eyebrow">KOLEKSI NCRAFT</p>
+          <h2 id="shop-title">Crochet Tersedia</h2>
+        </div>
+        <div class="product-tools">
+          <label class="search-field">
+            <span class="visually-hidden">Cari produk</span>
+            <input id="product-search" type="search" placeholder="Cari produk crochet..." autocomplete="off">
+          </label>
+          <button class="favorite-filter" id="favorite-filter" type="button" aria-pressed="false">
+            <span aria-hidden="true">♡</span> Favorit <span class="favorite-count" id="favorite-count">0</span>
+          </button>
+        </div>
+        <p class="product-results" id="product-results" aria-live="polite"></p>
+        <p class="products-empty" id="products-empty" hidden>Produk tidak ditemukan.</p>
+        <div class="product-grid">
+          <article class="product-card" data-product-name="Gantungan Kunci Dinosaurus" data-price="15000">
+            <img src="./assets/crochet%20dinosaur.png" alt="Gantungan kunci dinosaurus rajut" fetchpriority="high">
+            <button class="favorite-toggle" type="button" aria-pressed="false" aria-label="Simpan Gantungan Kunci Dinosaurus ke favorit" title="Simpan ke favorit"><span aria-hidden="true">♡</span></button>
+            <div class="product-info">
+              <h3>Gantungan Kunci Dinosaurus</h3>
+              <p class="product-price">Rp.15.000,00</p>
+              <div class="product-controls">
+                <div class="quantity-row">
+                  <label for="quantity-dinosaur">Jumlah</label>
+                  <div class="quantity-stepper">
+                    <button class="quantity-button" type="button" data-change="decrease" aria-label="Kurangi jumlah Gantungan Kunci Dinosaurus">−</button>
+                    <input class="quantity-input" id="quantity-dinosaur" type="number" min="1" max="99" step="1" value="1" aria-label="Jumlah Gantungan Kunci Dinosaurus">
+                    <button class="quantity-button" type="button" data-change="increase" aria-label="Tambah jumlah Gantungan Kunci Dinosaurus">+</button>
+                  </div>
+                </div>
+                <button class="add-to-cart" type="button">Tambah ke keranjang</button>
+              </div>
+            </div>
+          </article>
+          <article class="product-card" data-product-name="Gantungan Kunci Lumba-Lumba" data-price="10000">
+            <img src="./assets/crochet%20dolphin.png" alt="Gantungan kunci lumba-lumba rajut">
+            <button class="favorite-toggle" type="button" aria-pressed="false" aria-label="Simpan Gantungan Kunci Lumba-Lumba ke favorit" title="Simpan ke favorit"><span aria-hidden="true">♡</span></button>
+            <div class="product-info">
+              <h3>Gantungan Kunci Lumba-Lumba</h3>
+              <p class="product-price">Rp.10.000,00</p>
+              <div class="product-controls">
+                <div class="quantity-row">
+                  <label for="quantity-dolphin">Jumlah</label>
+                  <div class="quantity-stepper">
+                    <button class="quantity-button" type="button" data-change="decrease" aria-label="Kurangi jumlah Gantungan Kunci Lumba-Lumba">−</button>
+                    <input class="quantity-input" id="quantity-dolphin" type="number" min="1" max="99" step="1" value="1" aria-label="Jumlah Gantungan Kunci Lumba-Lumba">
+                    <button class="quantity-button" type="button" data-change="increase" aria-label="Tambah jumlah Gantungan Kunci Lumba-Lumba">+</button>
+                  </div>
+                </div>
+                <button class="add-to-cart" type="button">Tambah ke keranjang</button>
+              </div>
+            </div>
+          </article>
+          <article class="product-card" data-product-name="Gantungan Kunci Hati" data-price="5000">
+            <img src="./assets/crochet%20heart%20keychain.png" alt="Gantungan kunci hati rajut">
+            <button class="favorite-toggle" type="button" aria-pressed="false" aria-label="Simpan Gantungan Kunci Hati ke favorit" title="Simpan ke favorit"><span aria-hidden="true">♡</span></button>
+            <div class="product-info">
+              <h3>Gantungan Kunci Hati</h3>
+              <p class="product-price">Rp.5.000,00</p>
+              <div class="product-controls">
+                <div class="quantity-row">
+                  <label for="quantity-heart">Jumlah</label>
+                  <div class="quantity-stepper">
+                    <button class="quantity-button" type="button" data-change="decrease" aria-label="Kurangi jumlah Gantungan Kunci Hati">−</button>
+                    <input class="quantity-input" id="quantity-heart" type="number" min="1" max="99" step="1" value="1" aria-label="Jumlah Gantungan Kunci Hati">
+                    <button class="quantity-button" type="button" data-change="increase" aria-label="Tambah jumlah Gantungan Kunci Hati">+</button>
+                  </div>
+                </div>
+                <button class="add-to-cart" type="button">Tambah ke keranjang</button>
+              </div>
+            </div>
+          </article>
+          <article class="product-card" data-product-name="Mawar Rajut" data-price="10000">
+            <img src="./assets/crochet%20rose.png" alt="Mawar rajut buatan tangan">
+            <button class="favorite-toggle" type="button" aria-pressed="false" aria-label="Simpan Mawar Rajut ke favorit" title="Simpan ke favorit"><span aria-hidden="true">♡</span></button>
+            <div class="product-info">
+              <h3>Mawar Rajut</h3>
+              <p class="product-price">Rp.10.000,00</p>
+              <div class="product-controls">
+                <div class="quantity-row">
+                  <label for="quantity-rose">Jumlah</label>
+                  <div class="quantity-stepper">
+                    <button class="quantity-button" type="button" data-change="decrease" aria-label="Kurangi jumlah Mawar Rajut">−</button>
+                    <input class="quantity-input" id="quantity-rose" type="number" min="1" max="99" step="1" value="1" aria-label="Jumlah Mawar Rajut">
+                    <button class="quantity-button" type="button" data-change="increase" aria-label="Tambah jumlah Mawar Rajut">+</button>
+                  </div>
+                </div>
+                <button class="add-to-cart" type="button">Tambah ke keranjang</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="cart-summary page-shell" id="cart-summary" aria-labelledby="cart-title">
+        <div class="cart-heading">
+          <h2 id="cart-title">Keranjang belanja</h2>
+          <div class="cart-heading-actions">
+            <p><span id="cart-item-count">0</span> barang</p>
+            <button class="cart-clear" id="cart-clear" type="button" disabled>Kosongkan keranjang</button>
+          </div>
+        </div>
+        <p id="cart-empty">Keranjangmu masih kosong.</p>
+        <ul class="cart-items" id="cart-items"></ul>
+        <div class="cart-total-row" id="cart-total-row" hidden>
+          <span>Total</span>
+          <strong id="cart-total"></strong>
+        </div>
+        <p class="visually-hidden" id="cart-status" role="status" aria-live="polite"></p>
+      </section>
+
+      <section class="contact-band" id="custom-orders" aria-labelledby="contact-title">
+        <div class="page-shell contact-inner">
+          <p class="eyebrow">Tidak menemukan crochet yang di inginkan?</p>
+          <h2 id="contact-title" lang="id">Buat custom order!</h2>
+          <a class="contact-button" href="mailto:?subject=Pesanan%20khusus%20crochet%20NCraft" aria-label="Buat pesanan khusus" lang="id">Buat custom order! <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="page-shell footer-inner">
+        <a class="brand-mark footer-brand" href="#home" aria-label="Beranda NCraft"><img class="brand-logo" src="./assets/logo.png" alt="NCraft"></a>
+        <p>Rajutan buatan tangan, dibuat istimewa.</p>
+        <a href="#custom-orders">Tanyakan pesanan khusus</a>
+        <span class="footer-copyright">© 2026 NCRAFT</span>
+      </div>
+    </footer>
+
+    <script src="./cart.js"></script>
+    <script src="./node_module/bootstrap/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
