@@ -25,9 +25,10 @@
         <div class="collapse navbar-collapse" id="siteMenu">
           <ul class="navbar-nav ms-auto align-items-lg-center">
             <li class="nav-item"><a class="nav-link" href="#shop">Produk</a></li>
-            <li class="nav-item"><a class="nav-link" href="#cart-summary">Keranjang <span class="cart-count" id="cart-count">0</span></a></li>
             <li class="nav-item"><a class="nav-link" href="#about">Tentang kami</a></li>
+            <li class="nav-item"><a class="nav-link" href="#location">Lokasi</a></li>
             <li class="nav-item"><a class="nav-link" href="#custom-orders">Custom order</a></li>
+            <li class="nav-item"><button class="nav-link cart-open-button" id="cart-open" type="button" aria-controls="cart-drawer" aria-haspopup="dialog">Checkout <span class="cart-count" id="cart-count">0</span></button></li>
             <li class="nav-item"><a class="nav-contact" href="#shop">Buat pesanan <span aria-hidden="true">↗</span></a></li>
           </ul>
         </div>
@@ -51,10 +52,10 @@
 
       <section class="intro-band" id="about" aria-labelledby="approach-title">
         <div class="page-shell intro-inner">
-          <p class="eyebrow">DIRAJUT PERLAHAN, DIBUAT SEPERSONAL MUNGKIN.</p>
-          <h2 id="approach-title">Rajutan untuk <span>membawa senyum.</span></h2>
+          <p class="eyebrow">MENGENAL LEBIH DEKAT</p>
+          <h2 id="approach-title">Tentang <span>NCraft.</span></h2>
           <div class="intro-detail">
-            <p>Di NCraft, setiap detail dibuat dengan teliti: aksesori rajut penuh warna dan pesanan khusus yang terasa benar-benar milikmu.</p>
+            <p>NCraft menghadirkan aksesori crochet buatan tangan dan menerima pesanan khusus. Untuk custom order, kirimkan pola pilihanmu dalam bentuk PDF atau tautan YouTube agar desainnya sesuai dengan yang kamu inginkan.</p>
             <a class="text-link text-link-light" href="#custom-orders">Buat custom order <span aria-hidden="true">↘</span></a>
           </div>
         </div>
@@ -82,7 +83,7 @@
             <button class="favorite-toggle" type="button" aria-pressed="false" aria-label="Simpan Gantungan Kunci Dinosaurus ke favorit" title="Simpan ke favorit"><span aria-hidden="true">♡</span></button>
             <div class="product-info">
               <h3>Gantungan Kunci Dinosaurus</h3>
-              <p class="product-price">Rp.15.000,00</p>
+              <p class="product-price">Rp.45.000,00</p>
               <div class="product-controls">
                 <div class="quantity-row">
                   <label for="quantity-dinosaur">Jumlah</label>
@@ -101,7 +102,7 @@
             <button class="favorite-toggle" type="button" aria-pressed="false" aria-label="Simpan Gantungan Kunci Lumba-Lumba ke favorit" title="Simpan ke favorit"><span aria-hidden="true">♡</span></button>
             <div class="product-info">
               <h3>Gantungan Kunci Lumba-Lumba</h3>
-              <p class="product-price">Rp.10.000,00</p>
+              <p class="product-price">Rp.20.000,00</p>
               <div class="product-controls">
                 <div class="quantity-row">
                   <label for="quantity-dolphin">Jumlah</label>
@@ -120,7 +121,7 @@
             <button class="favorite-toggle" type="button" aria-pressed="false" aria-label="Simpan Gantungan Kunci Hati ke favorit" title="Simpan ke favorit"><span aria-hidden="true">♡</span></button>
             <div class="product-info">
               <h3>Gantungan Kunci Hati</h3>
-              <p class="product-price">Rp.5.000,00</p>
+              <p class="product-price">Rp.10.000,00</p>
               <div class="product-controls">
                 <div class="quantity-row">
                   <label for="quantity-heart">Jumlah</label>
@@ -139,7 +140,7 @@
             <button class="favorite-toggle" type="button" aria-pressed="false" aria-label="Simpan Mawar Rajut ke favorit" title="Simpan ke favorit"><span aria-hidden="true">♡</span></button>
             <div class="product-info">
               <h3>Mawar Rajut</h3>
-              <p class="product-price">Rp.10.000,00</p>
+              <p class="product-price">Rp.20.000,00</p>
               <div class="product-controls">
                 <div class="quantity-row">
                   <label for="quantity-rose">Jumlah</label>
@@ -156,12 +157,69 @@
         </div>
       </section>
 
-      <section class="cart-summary page-shell" id="cart-summary" aria-labelledby="cart-title">
+      <section class="faq-section" aria-labelledby="faq-title">
+        <div class="page-shell faq-inner">
+          <div class="faq-header">
+            <p class="eyebrow">FAQ</p>
+            <h2 id="faq-title">Pertanyaan yang sering ditanyakan</h2>
+          </div>
+
+          <div class="faq-list">
+            <details>
+              <summary>Berapa lama waktu pengerjaan custom order?</summary>
+              <p>Waktu pengerjaan biasanya tergantung pada tingkat kesulitan dan jumlah pesanan. Kami akan memberi estimasi yang jelas saat pesanan dikonfirmasi.</p>
+            </details>
+            <details>
+              <summary>Apakah bisa memesan dengan warna dan bentuk tertentu?</summary>
+              <p>Ya, kami menerima custom order dengan preferensi warna, ukuran, dan tema sesuai kebutuhanmu. Silakan kirim detail pesanan agar kami bisa menyesuaikan.</p>
+            </details>
+            <details>
+              <summary>Bisakah saya mengirim pola crochet untuk custom order?</summary>
+              <p>Bisa. Silakan kirim pola yang ingin digunakan dalam bentuk file PDF atau tautan YouTube. NCraft akan mengikuti pola referensimu agar desainnya sesuai dengan yang kamu inginkan.</p>
+            </details>
+            <details>
+              <summary>Apakah produk bisa dipakai sebagai hadiah?</summary>
+              <p>Tentu. Banyak pelanggan memilih crochet sebagai hadiah unik untuk teman, keluarga, atau momen spesial seperti ulang tahun dan acara kecil.</p>
+            </details>
+            <details>
+              <summary>Bagaimana cara melakukan pemesanan?</summary>
+              <p>Anda bisa memilih produk yang tersedia atau langsung menghubungi kami melalui tombol custom order untuk membahas desain yang diinginkan.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="location-section" id="location" aria-labelledby="location-title">
+        <div class="page-shell location-inner">
+          <div class="location-copy">
+            <p class="eyebrow">KUNJUNGI KAMI</p>
+            <h2 id="location-title">Lokasi NCraft</h2>
+            <address>Kp. Jl. Cibarunai No. 63<br>Sarijadi, Kec. Sukasari<br>Kota Bandung, Jawa Barat 40151</address>
+            <a class="location-directions" href="https://www.google.com/maps/search/?api=1&amp;query=Kp%20Jl.%20Cibarunai%20No.63%2C%20Sarijadi%2C%20Kec.%20Sukasari%2C%20Kota%20Bandung%2C%20Jawa%20Barat%2040151" target="_blank" rel="noopener noreferrer">Lihat petunjuk arah <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="location-map">
+            <iframe title="Peta lokasi NCraft di Sarijadi, Bandung" src="https://maps.google.com/maps?q=Kp%20Jl.%20Cibarunai%20No.63%2C%20Sarijadi%2C%20Kec.%20Sukasari%2C%20Kota%20Bandung%2C%20Jawa%20Barat%2040151&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-band" id="custom-orders" aria-labelledby="contact-title">
+        <div class="page-shell contact-inner">
+          <p class="eyebrow">Tidak menemukan crochet yang di inginkan?</p>
+          <h2 id="contact-title" lang="id">Buat custom order!</h2>
+          <a class="contact-button" href="https://wa.me/628121416794?text=Halo%20NCraft%2C%20saya%20ingin%20membuat%20custom%20order." target="_blank" rel="noopener noreferrer" aria-label="Buat pesanan khusus via WhatsApp" lang="id">Buat custom order! <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+    </main>
+
+    <dialog class="cart-drawer" id="cart-drawer" aria-labelledby="cart-title">
+      <section class="cart-summary" id="cart-summary" aria-labelledby="cart-title">
         <div class="cart-heading">
           <h2 id="cart-title">Keranjang belanja</h2>
           <div class="cart-heading-actions">
             <p><span id="cart-item-count">0</span> barang</p>
             <button class="cart-clear" id="cart-clear" type="button" disabled>Kosongkan keranjang</button>
+            <button class="cart-close" id="cart-close" type="button" aria-label="Tutup keranjang" autofocus>×</button>
           </div>
         </div>
         <p id="cart-empty">Keranjangmu masih kosong.</p>
@@ -170,23 +228,22 @@
           <span>Total</span>
           <strong id="cart-total"></strong>
         </div>
+        <div class="cart-order" aria-live="polite">
+          <label class="cart-note-wrap" for="order-notes">
+            <span>Catatan pesanan</span>
+            <textarea id="order-notes" rows="3" placeholder="Contoh: warna pastel, ukuran, atau detail lain yang diinginkan..."></textarea>
+          </label>
+          <a class="order-whatsapp-button" id="order-whatsapp" href="#" target="_blank" rel="noopener noreferrer">Pesan via WhatsApp</a>
+        </div>
         <p class="visually-hidden" id="cart-status" role="status" aria-live="polite"></p>
       </section>
-
-      <section class="contact-band" id="custom-orders" aria-labelledby="contact-title">
-        <div class="page-shell contact-inner">
-          <p class="eyebrow">Tidak menemukan crochet yang di inginkan?</p>
-          <h2 id="contact-title" lang="id">Buat custom order!</h2>
-          <a class="contact-button" href="mailto:?subject=Pesanan%20khusus%20crochet%20NCraft" aria-label="Buat pesanan khusus" lang="id">Buat custom order! <span aria-hidden="true">↗</span></a>
-        </div>
-      </section>
-    </main>
+    </dialog>
 
     <footer class="site-footer">
       <div class="page-shell footer-inner">
         <a class="brand-mark footer-brand" href="#home" aria-label="Beranda NCraft"><img class="brand-logo" src="./assets/logo.png" alt="NCraft"></a>
         <p>Rajutan buatan tangan, dibuat istimewa.</p>
-        <a href="#custom-orders">Tanyakan pesanan khusus</a>
+        <a href="#custom-orders">Tanyakan custom order</a>
         <span class="footer-copyright">© 2026 NCRAFT</span>
       </div>
     </footer>

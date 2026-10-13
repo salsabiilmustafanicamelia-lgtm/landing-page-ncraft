@@ -1,5 +1,6 @@
 const CART_STORAGE_KEY = "ncraft-cart";
 const FAVORITES_STORAGE_KEY = "ncraft-favorites";
+const WHATSAPP_NUMBER = "628121416794";
 
 function readStorage(key, fallback) {
   try {
@@ -28,6 +29,11 @@ const cartTotalRow = document.querySelector("#cart-total-row");
 const cartTotal = document.querySelector("#cart-total");
 const cartStatus = document.querySelector("#cart-status");
 const cartClear = document.querySelector("#cart-clear");
+const cartDrawer = document.querySelector("#cart-drawer");
+const cartOpen = document.querySelector("#cart-open");
+const cartClose = document.querySelector("#cart-close");
+const orderNotes = document.querySelector("#order-notes");
+const orderButton = document.querySelector("#order-whatsapp");
 const searchInput = document.querySelector("#product-search");
 const favoriteFilter = document.querySelector("#favorite-filter");
 const favoriteCount = document.querySelector("#favorite-count");
@@ -41,6 +47,44 @@ const rupiah = new Intl.NumberFormat("id-ID", {
   minimumFractionDigits: 2,
   maximumFractionDigits: 2
 });
+
+function buildOrderMessage() {
+  const entries = [...cart.entries()];
+
+  if (!entries.length) {
+    return "";
+  }
+
+  const lines = entries.map(([name, item]) => `- ${name}: ${item.quantity} pcs (${rupiah.format(item.price * item.quantity)})`);
+  const total = entries.reduce((sum, [, item]) => sum + item.price * item.quantity, 0);
+  const note = (orderNotes.value || "").trim() || "Tidak ada catatan tambahan.";
+
+  return [
+    "Halo NCraft, saya ingin memesan:",
+    "",
+    ...lines,
+    "",
+    `Total pesanan: ${rupiah.format(total)}`,
+    "",
+    `Catatan tambahan: ${note}`
+  ].join("\n");
+}
+
+function updateOrderButton() {
+  const entries = [...cart.entries()];
+  const hasItems = entries.length > 0;
+
+  orderButton.classList.toggle("disabled", !hasItems);
+  orderButton.setAttribute("aria-disabled", String(!hasItems));
+
+  if (!hasItems) {
+    orderButton.removeAttribute("href");
+    return;
+  }
+
+  const message = buildOrderMessage();
+  orderButton.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+}
 
 function renderCart() {
   const entries = [...cart.entries()];
@@ -80,6 +124,7 @@ function renderCart() {
   }
 
   cartTotal.textContent = rupiah.format(total);
+  updateOrderButton();
 }
 
 function renderProducts() {
@@ -179,6 +224,43 @@ cartClear.addEventListener("click", () => {
   cartStatus.textContent = "Keranjang berhasil dikosongkan.";
   renderCart();
 });
+
+cartOpen.addEventListener("click", () => cartDrawer.showModal());
+cartClose.addEventListener("click", () => cartDrawer.close());
+cartDrawer.addEventListener("click", event => {
+  if (event.target === cartDrawer) {
+    cartDrawer.close();
+  }
+});
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape" && cartDrawer.open) {
+    cartDrawer.close();
+  }
+});
+
+orderNotes.addEventListener("input", updateOrderButton);
+
+const revealTargets = document.querySelectorAll(
+  ".intro-inner, .product-showcase-heading, .product-card, .faq-header, .faq-list details, .location-copy, .location-map, .contact-inner"
+);
+
+if ("IntersectionObserver" in window && window.matchMedia("(prefers-reduced-motion: no-preference)").matches) {
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: "0px 0px -32px 0px" });
+
+  revealTargets.forEach(target => {
+    const siblingIndex = [...target.parentElement.children].indexOf(target);
+    target.style.setProperty("--reveal-delay", `${Math.min(siblingIndex, 3) * 70}ms`);
+    target.classList.add("scroll-reveal");
+    revealObserver.observe(target);
+  });
+}
 
 renderCart();
 renderFavorites();
